@@ -69,9 +69,9 @@ int lsh_cd(char **args)
    @param args List of args.  Not examined.
    @return Always returns 1, to continue executing.
  */
-int lsh_help(char **args)
+int lsh_help(void)
 {
-	int i;
+	int i=0;
   printf("SH\n");
   printf("Type program names and arguments, and hit enter.\n");
   printf("The following are built in:\n");
