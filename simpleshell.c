@@ -20,7 +20,7 @@
 void greeting() {
     printf("\n\n\n\n******************"
         "************************");
-    printf("\n\n\n\t***ESPESCHIT'S SHELL***");
+    printf("\n\n\n\t***SHELL***");
     printf("\n\n\tSTART WITH THE COMMAND HELP");
     printf("\n\n\n\n*******************"
         "***********************");
@@ -29,27 +29,34 @@ void greeting() {
     return;
 }
 
+const char *instructions = "\nREAD THE INSTRUCTIONS BELOW***";
+
+	static char *username = (const char *)getenv("USER");
+
+	printf("The username is %s\n", username);
+
+
+
 void openHelp() {
-    puts("\n***READ THE INSTRUCTIONS BELLOW***"
-        "\nList of Commands supported:"
-        "\n>cd"
-        "\n>mkdir"
-        "\n>rmdir"
-        "\n>echo"
-        "\n>pwd"
-        "\n>help"
-        "\n>date"
-        "\n>exit"
-        "\n>ls"
-        "\n>python"
-        "\n>clear"
-        "\n");
 
-    char* username = getenv("USER");
-    printf("User is: @%s", username);
-    printf("\n""\n");
+	  printf("Welcome to Shell, %s!\n", args);
 
-    return;
+  puts(instructions);
+
+        printf("\nList of Commands supported:");
+        printf("\n>cd");
+        printf("\n>mkdir");
+        printf("\n>rmdir");
+        printf("\n>echo");
+        printf("\n>pwd");
+        printf("\n>help");
+        printf("\n>date");
+        printf("\n>exit");
+        printf("\n>ls");
+        printf("\n>clear");
+        printf("\n");
+
+  return 1;
 }
 
 void date() {
@@ -161,7 +168,7 @@ int main(int argc, char* argv[]) {
                 }
 
                 else if (strcmp(cmd, "help") == 0) {
-                    openHelp();
+                    openHelp(argv);
                
                 } else if (strcmp(cmd, "cd") == 0) {
                     char* arg = strtok(0, DELIMS);
