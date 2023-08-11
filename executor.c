@@ -72,4 +72,3 @@ int execute_commands(char **commands)
 	/* Return the exit status of the last executed command */
 	return (0);
 }
-
